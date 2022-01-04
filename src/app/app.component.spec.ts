@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './components/header/header.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -18,8 +19,10 @@ describe('AppComponent', () => {
 
   it(`should have as title 'angular-crash'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
+    const fixture_header = TestBed.createComponent(HeaderComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular-crash');
+    const header = fixture_header.componentInstance;
+    expect(header.title).toEqual('angular-crash');
   });
 
   it('should render title', () => {

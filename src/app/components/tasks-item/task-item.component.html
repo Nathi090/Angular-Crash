@@ -1,0 +1,35 @@
+<div class="container"
+  [ngClass]="{ reminder: task.reminder }"
+  contentEditable="{{ editable }}"
+  class="task"
+  *ngIf="task"
+  (dblclick)="onToggle(task)"
+>
+  
+    <div class="row">
+      <div class="col">
+            
+        <h3 >{{ task.text }}</h3>
+        <p >{{ task.day }}</p>
+      </div>
+      <div class="row col my-auto col-auto">
+              
+        <fa-icon
+          (click)="onDelete(task)"
+          [ngStyle]="{ color: 'red' }"
+          [icon]="faTimes"
+        >
+        </fa-icon>
+
+        <fa-icon
+          (click)="canEdit(task, task.text, task.day)"
+          [ngStyle]="{ color: editable ? '#77726D' : '#FFDA33' }"
+          [icon]="faPencil"
+        >
+        </fa-icon>
+      </div>
+    </div>
+    
+  
+</div>
+
